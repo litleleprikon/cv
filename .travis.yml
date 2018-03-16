@@ -10,3 +10,8 @@ before_install:
 script:
     - mkdir _build
     - pdflatex -interaction=nonstopmode -halt-on-error -output-directory _build cv.tex
+
+notifications:
+    email:
+        on_success: change
+        on_failure: always
