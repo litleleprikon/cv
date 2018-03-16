@@ -1,0 +1,26 @@
+sudo: required
+dist: trusty
+before_install:
+- echo "\n" | sudo add-apt-repository ppa:jonathonf/texlive
+- sudo apt-get update
+- sudo apt-get install -y texlive xzdec
+- tlmgr init-usertree || true
+- sudo tlmgr install --no-persistent-downloads titlesec supertabular
+script:
+- mkdir _build
+- pdflatex -interaction=nonstopmode -halt-on-error -output-directory _build cv.tex
+cache:
+  bundler: true
+  directories:
+  - /home/travis/texmf/
+  - /home/travis/.rvm/
+notifications:
+  webhooks: https://fathomless-fjord-24024.herokuapp.com/notify
+deploy:
+  provider: releases
+  api_key:
+    secure: eRErSzEY03BdO0Y7lBBSVYTVnZalYih+rRzVsf0Pb3mv5Xkuiqx+hzBG6EUG55JTXy3MiwmnQcnFyRKN4yqatvUZYZsX+ElIODX5qJn2aNSFM8wR3U7Da5FI6M0W6U4bSLIqqOcE+XTxGB+Xa5cg5WbhFqpJNqJaB8O+K/x+mFlk2JBHhHXyWgOUAsFjPpwbizr0AJsuEGZHG5Y2168jbVHe9mAacbbVGru+6oUKBDFcdPZ5K1v63r095k9wvZaZ7tVrWPTkIKwT5SRHFCX+OCwU1H8O3iI+N75Mb9lS2q/n4NNF4f2QgjUpvrl8lPS5DTWumnI/k4Vb0plUPIZ2AZ83ovTRAuIekN1bGf4HqD2+Vw5HRt3ncEn20RVBXgZwdSQxejjfIaHGimKANyh1d9neg5ncYtP300WKgkid1eKlECVYjCiwDbTlJ1y34kJ52T4Nxez1uyZpG04WrRgX9GTcr5eseh7j4TQz1knqzK0FfI8hxx7kQyAKoIrW1HSqBS0vNF7sFzMBr6RLFPaLJAKtKGv4/4NEfWUhk9V32w2FS2z4JuVjHqd0n8dzubUSW356ITRQtm0FpBPwfmR9qmHean3lVqa1kAe/mCEplbXeFr+CwDAJWwi5/1Iktc+NR1qJwJMpbzDUiN4q3OPZAF7NJbxr9663p59WpXSjcOU=
+  file: "./_build/cv.pdf"
+  on:
+    tags: true
+    repo: litleleprikon/cv
