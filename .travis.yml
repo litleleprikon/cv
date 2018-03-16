@@ -1,10 +1,10 @@
 sudo: required
 dist: trusty
 before_install:
+- sudo add-apt-repository ppa:jonathonf/texlive
 - sudo apt-get update
 - sudo apt-get install -y texlive xzdec
 - tlmgr init-usertree
-- tlmgr option repository ftp://tug.org/historic/systems/texlive/2015/tlnet-final
 - sudo tlmgr install --no-persistent-downloads titlesec supertabular
 script:
 - mkdir _build
