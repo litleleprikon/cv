@@ -4,7 +4,7 @@ before_install:
 - echo "\n" | sudo add-apt-repository ppa:jonathonf/texlive
 - sudo apt-get update
 - sudo apt-get install -y texlive xzdec
-- tlmgr init-usertree
+- tlmgr init-usertree || true
 - sudo tlmgr install --no-persistent-downloads titlesec supertabular
 script:
 - mkdir _build
