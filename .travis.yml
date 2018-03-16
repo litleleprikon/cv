@@ -6,7 +6,7 @@ before_install:
     - sudo apt-get install -y texlive xzdec
     - tlmgr init-usertree
     - tlmgr option repository ftp://tug.org/historic/systems/texlive/2015/tlnet-final
-    - sudo tlmgr install --no-persistent-download titlesec supertabular
+    - sudo tlmgr install --no-persistent-downloads titlesec supertabular
 script:
     - mkdir _build
     - pdflatex -interaction=nonstopmode -halt-on-error -output-directory _build cv.tex
