@@ -10,8 +10,10 @@ script:
 - mkdir _build
 - pdflatex -interaction=nonstopmode -halt-on-error -output-directory _build cv.tex
 cache:
+  bundler: true
   directories:
   - /home/travis/texmf/
+  - /home/travis/.rvm/
 notifications:
   webhooks: https://fathomless-fjord-24024.herokuapp.com/notify
 deploy:
