@@ -1,6 +1,7 @@
 \documentclass[a4paper,10pt]{article}
 
 \RequirePackage{color,graphicx}
+\usepackage{array}
 \usepackage{marvosym}
 \usepackage[usenames,dvipsnames]{xcolor}
 \usepackage{supertabular}
@@ -21,75 +22,74 @@
 \pagestyle{empty}
 
 \begin{document}
+\newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}}
+\newcolumntype{C}[1]{>{\centering\arraybackslash}p{#1}}
+\newcolumntype{R}[1]{>{\raggedleft\arraybackslash}p{#1}}
 \par{\centering{\Huge Emil Sharifullin}\bigskip\par}
 
 
 \section{Personal Data}
 
-\begin{tabular}{r p{11cm}}
-    \textsc{Website:}  &  \href{https://litleleprikon.me/}{litleleprikon.me}\\
-    \textsc{Phone:}    &  +7 929 7255262\\
-    \textsc{Email:}    &  \href{mailto:iam@litleleprikon.me}{iam@litleleprikon.me} \\
-    \textsc{Github:}   &  \href{https://github.com/litleleprikon}{github.com/litleleprikon}
+\begin{tabular}{R{2cm} L{15cm}}
+	\textsc{Website:} & \href{https://litleleprikon.me/}{litleleprikon.me}                \\
+	\textsc{Phone:}   & +7 929 7255262, +420 607 997 710                                  \\
+	\textsc{Email:}   & \href{mailto:iam@litleleprikon.me}{iam@litleleprikon.me}          \\
+	\textsc{Github:}  & \href{https://github.com/litleleprikon}{github.com/litleleprikon} 
 \end{tabular}
 
 \section{Work Experience}
-\begin{tabular}{r|p{11cm}}
- \textsc{Feb 2018} & Information Security Engineer at \href{https://bestplace.ai}{BestPlace LLC}. \\\textsc{Jan 2017}&\emph{DevOps, Software Engineering}\\&\footnotesize{
- \begin{itemize}
- \item Done huge amount of DevOps tasks: servers configuration, CI/CD configuration, monitoring configuration, docker configuration, backup/restore of DB's.
- \item Developed frontends and backends for various services inside the company.
- \end{itemize}
- }\\\multicolumn{2}{c}{} \\
- \textsc{May 2016} & Software Engineering Intern at NOXA Datalab \\\textsc{Jan 2016}&\emph{\href{https://www.intel.com/content/dam/www/public/us/en/documents/solution-briefs/nomura-bos-solution-brief.pdf}{BOS} Engineer}\\&\footnotesize{
- \begin{itemize}
- \item Developed data model and created front-end for OLAP/OLTP system.
- \end{itemize}
- }\\\multicolumn{2}{c}{}\\
- \textsc{Dec 2016} & Part-time Teacher at Innopolis Lyceum \\\textsc{Jan 2016}&\emph{Web Development Teacher}\\&\footnotesize{
- \begin{itemize}
- \item Taught young students to create their own sites.
- \end{itemize}
- }\\\multicolumn{2}{c}{}\\
- \textsc{Jul 2015} & Software Engineer at "Tensor" Company \\\textsc{Aug 2013}&\emph{Fullstack Web Development}\\&
- \footnotesize{
- \begin{itemize}
- \item Integrated the billing system with own ERP system.
- \item Developed frontend for functionality to send reports to public authorities.
- \end{itemize}
- }\\
- \multicolumn{2}{c}{} \\
+\begin{tabular}{R{2cm}|L{15cm}}
+	\textsc{Current}  & Software Engineer at RedHat Czech S.R.O.                                     \\\textsc{Sep 2018}&\emph{Python Developer at Content Delivery Team}\\&\footnotesize{
+	\begin{itemize}
+	\item Migrated and maintained projects to python3.
+	\end{itemize}
+	}\\\multicolumn{2}{c}{}\\
+	\textsc{Feb 2018} & Information Security Engineer at \href{https://bestplace.ai}{BestPlace LLC}. \\\textsc{Jan 2017}&\emph{DevOps, Software Engineer}\\&\footnotesize{
+	\begin{itemize}
+	\item Done huge amount of DevOps tasks: servers configuration, CI/CD configuration, monitoring configuration, docker configuration, backup/restore of DB's.
+	\item Developed frontends and backends for various services inside the company.
+	\end{itemize}
+	}\\\multicolumn{2}{c}{} \\
+	\textsc{Dec 2016} & Part-time Teacher at Innopolis Lyceum                                        \\\textsc{Jan 2016}&\emph{Web Development Teacher}\\&\footnotesize{
+	\begin{itemize}
+	\item Taught young students to create their own sites.
+	\end{itemize}
+	}\\\multicolumn{2}{c}{}\\
+	\textsc{Jul 2015} & Software Engineer at "Tensor" Company                                        \\\textsc{Aug 2013}&\emph{Fullstack Web Development}\\&
+	\footnotesize{
+	\begin{itemize}
+	\item Integrated the billing system with own ERP system.
+	\item Developed frontend for functionality to send reports to public authorities.
+	\end{itemize}
+	}\\
+	\multicolumn{2}{c}{} \\
 \end{tabular}
 
 \section{Education}
-\begin{tabular}{r p{11cm}}
- \textsc{September} 2017 & Master Student in \textsc{Secure Systems and Networks Engineering (Incomplete)}, \textbf{Innopolis University}, Innopolis\\
- & Projects:
- \begin{itemize}
-    \item Analysis of Resource Consumption for Malware Detection in Mobile Enviroment
- \end{itemize}\\
- \textsc{July} 2015 & B.S.E. in \textsc{Mathematics and Computer Sciences}, \textbf{Kazan National Research Technical University}, Kazan\\
- & Bachelor paper: \href{https://github.com/litleleprikon/bachelor\_paper}{"Development of BigData analysis system based on MapReduce pattern"}\\
+\begin{tabular}{R{2cm}L{15cm}}
+	\textsc{Sep} 2017 & Master Student in \textsc{Secure Systems and Networks Engineering (Incomplete)}, \textbf{Innopolis University}, Innopolis                    \\
+	                  & Projects:                                                                                                                                    
+	\begin{itemize}
+	\item Analysis of Resource Consumption for Malware Detection in Mobile Enviroment
+	\end{itemize}\\
+	\textsc{Jul} 2015 & B.S.E. in \textsc{Mathematics and Computer Sciences}, \textbf{Kazan National Research Technical University}, Kazan                           \\
+	                  & Bachelor paper: \href{https://github.com/litleleprikon/bachelor\_paper}{"Development of BigData analysis system based on MapReduce pattern"} \\
 \end{tabular}
 
 \section{Professional Skills}
-\begin{tabular}{r p{11cm}}
-
- Programming Languages:  &  Python, JavaScript, Java, Bash\\
- Data Storages:          &  PostgreSQL, MongoDB, Redis \\
- System administration:  &  Docker, Nginx, uWSGI, Teamcity, Postfix, BIND, Ansible, LetsEncrypt, OpenVPN, TravisCI, CircleCI, Jenkins\\
- Markup Languages:       &  HTML5, CSS3, \LaTeX \\
- Other Technologies:     &  asyncio/aiohttp, ExpressJS, ReactJS, VueJS, Vaadin
-
+\begin{tabular}{R{2cm}L{15cm}}
+	Languages:    & Python, JavaScript(TypeScript, CoffeeScript), Go, Bash                                                                \\
+	Storages: & PostgreSQL, MongoDB, Redis, Memcached, Elasticsearch                                                                  \\
+	DevOps:   & Docker, Nginx, uWSGI, Teamcity, Postfix, BIND, Ansible, LetsEncrypt, OpenVPN, TravisCI, CircleCI, Jenkins, Prometheus \\
+	Markup:   & HTML5, CSS3, \LaTeX                                                                                                   \\
+	Other:    & asyncio/aiohttp, ExpressJS, KoaJS, ReactJS, VueJS, Vaadin                                                             
 \end{tabular}
 
 \section{Languages}
-\begin{tabular}{r p{11cm}}
- \textsc{Russian:}&Native\\
-\textsc{English:}&Intermediate\\
+\begin{tabular}{R{2cm}L{15cm}}
+	\textsc{Russian:} & Native           \\
+	\textsc{English:} & Intermediate     \\
+	\textsc{Czech:}   & Pre-Intermediate \\
 \end{tabular}
 
-% \section{Interests and Activities}
-% Technologies, Open-Source, Programming \par
-% Snowboarding, Longboarding, Drumming, Guitar Playing
 \end{document}
